@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Training</title>
+    <link href="basic1.css" rel="stylesheet" type="text/css" />
+    <script src="moviefilter.js" type="text/javascript" lang="en" defer></script>
+</head>
+<body>
+
+    <header>My Logo</header>
+    <h1>Javascript Filter</h1>
+    <article>
+        <p>
+            I will explain the process of filtering an array of elements in Javascript.
+            Filtering uses the .filter command.  I will also demonstrate using the arrow
+            function, chaining filters, and finally mapping to another object.
+        </p>
+    </article>
+    <h1>What is a filter?</h1>
+    <h2>The Code</h2>
+    <figure>
+        <code>
+            <pre>
+        // Declaring our array of movies.
+
+            const movies = [
+            { title: 'a', year: 2018, rating: 4.5 },
+            { title: 'b', year: 2018, rating: 4.7 },
+            { title: 'c', year: 2018, rating: 3 },
+            { title: 'd', year: 2017, rating: 4.5 },
+        ];
+
+
+        // All movies in 2018 with rating > 4
+
+        moviesFiltered = movies.filter( function (movies) {
+            return (movies.year === 2018)
+                && (movies.rating > 4 );
+        });
+
+        for( let i of moviesFiltered)
+            console.log(i);
+        </pre>
+        </code>
+    </figure>
+    <article>
+        <h2>Demonstration</h2>
+
+
+        All the Movies in the Array.
+
+        <input type="button" name='displaymovies' value='Display All Movies' onclick="document.getElementById('allmovielist').innerHTML = showMovies(movies);" />
+
+        <table id=allmovielist border="1"></table>
+
+
+        To filter.
+        <input type="button" name='displayfiltermovies' value='Display Filtered Movies' onclick="document.getElementById('allmovielist').innerHTML = showMovies(moviesFiltered);" />
+
+
+
+
+    </article>
+    <h1>Using the Arrow function</h1>
+    <h2>The Code</h2>
+    <figure>
+        <code>
+            <pre>
+		        // Declaring our array of movies.
+
+		            const movies = [
+		            { title: 'a', year: 2018, rating: 4.5 },
+		            { title: 'b', year: 2018, rating: 4.7 },
+		            { title: 'c', year: 2018, rating: 3 },
+		            { title: 'd', year: 2019, rating: 4.5 },
+		            { title: 'e', year: 2019, rating: 3.7 },
+		            { title: 'f', year: 2019, rating: 4.1 },
+		            { title: 'g', year: 2019, rating: 3.5 },
+					{ title: 'h', year: 2019, rating: 4.7 },
+		            { title: 'i', year: 2019, rating: 5.0 }
+
+
+		        ];
+
+				// Add a filter selection combo box
+
+
+		        // All movies in 2018 with rating > 4
+
+		        moviesFiltered = movies.filter( function (movies) {
+		            return (movies.year === 2018)
+		                && (movies.rating > 4 );
+		        });
+
+		        for( let i of moviesFiltered)
+		            console.log(i);
+        </pre>
+        </code>
+    </figure>
+    <h2>Demonstration</h2>
+    
+        All the Movies in the Array.
+        <input type="button" name='allarrowmovies' value='All Movies' onclick="document.getElementById('arrowmovielist').innerHTML = showArrowMovies(arrowmovies);"/>
+            
+        
+        <table id=arrowmovielist border="1"></table>
+    
+    
+        To filter select a year, and a minimum rating.
+        <label for="yearSelect">Choose a year:</label>
+        <select id="yearSelect" name="year">
+            <option value=2018>2018</option>
+            <option value=2019 selected>2019</option>
+        </select>
+        <label for="ratingSelect">Choose a rating:</label>
+        <select id="ratingSelect" name="rating">
+            <option value=1 selected>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
+        <input type="button" name='filteredarrowmovies' value='Filtered Movies' onclick="document.getElementById('arrowmovielist').innerHTML = showArrowMovies(arrowmoviesFiltered);"/>
+            
+
+
+    
+    <h1>Chaining Filters</h1>
+    <h2>The Code</h2>
+    <h2>Demonstration</h2>
+    <h1>Mapping</h1>
+    <h2>The Code</h2>
+    <h2>Demonstration</h2>
+    <footer>Nubila Levon - Univerify Technologies &copy;2022 </footer>
+    
+
+</body>
+</html>
